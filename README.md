@@ -29,6 +29,6 @@ Built with **HTML, CSS, JavaScript**, and **Font Awesome** for icons.
 <img width="1918" height="869" alt="image" src="https://github.com/user-attachments/assets/6b8fb3ba-da3e-4b25-af26-5c5b30dcef80" />
 <img width="1920" height="881" alt="image" src="https://github.com/user-attachments/assets/e6fbb7a0-b3c5-4565-b9e9-4a70ad0e5b6f" />
 
-## 🚀 Deployment
-This project is deployed on **Vercel**.  
-👉 [Click here to view the live app]([https://your-app.vercel.app](https://smart-study-planner-c6wy.vercel.app/)) 
+## 🔗 Live Demo
+The project is live here: [Smart Study Planner on Vercel](https://smart-study-planner-c6wy.vercel.app/)
+
