@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Smart Study Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-animation">
+      <div class="floating-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+      </div>
+    </div>
+
+    <div class="container" id="main-container">
+      <header class="header-section" data-scroll>
+        <div class="header-content">
+          <h1 class="main-title">
+            <span class="title-icon">📚</span>
+            Smart Study Planner
+            <div class="title-glow"></div>
+          </h1>
+          <p class="subtitle">
+            Plan your studies smartly and achieve academic excellence!
+          </p>
+        </div>
+      </header>
+
+      <div class="stats-section" data-scroll>
+        <div class="stats-grid">
+          <div class="stat-card" data-stat="total">
+            <div class="stat-icon">📊</div>
+            <h3 id="total-tasks" class="stat-number">0</h3>
+            <p class="stat-label">Total Tasks</p>
+            <div class="stat-progress">
+              <div class="progress-bar" data-progress="100"></div>
+            </div>
+          </div>
+          <div class="stat-card" data-stat="completed">
+            <div class="stat-icon">✅</div>
+            <h3 id="completed-tasks" class="stat-number">0</h3>
+            <p class="stat-label">Completed</p>
+            <div class="stat-progress">
+              <div class="progress-bar" data-progress="0"></div>
+            </div>
+          </div>
+          <div class="stat-card" data-stat="pending">
+            <div class="stat-icon">⏳</div>
+            <h3 id="pending-tasks" class="stat-number">0</h3>
+            <p class="stat-label">Pending</p>
+            <div class="stat-progress">
+              <div class="progress-bar" data-progress="0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" data-scroll>
+        <div class="form-container">
+          <h2 class="section-title">
+            <span class="title-gradient">Add New Study Task</span>
+            <div class="title-underline"></div>
+          </h2>
+          <form id="task-form" class="modern-form">
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="task-title">Subject/Topic</label>
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="task-title"
+                    placeholder="e.g., Java, Javascript, C++"
+                    required
+                  />
+                  <div class="input-border"></div>
+                </div>
+              </div>
+              <div class="input-group full-width">
+                <label for="task-desc">Description</label>
+                <div class="input-wrapper">
+                  <textarea
+                    id="task-desc"
+                    placeholder="e.g., Complete Chapter Conditional statement, Looping"
+                    rows="3"
+                  ></textarea>
+                  <div class="input-border"></div>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="task-date">Due Date</label>
+                <div class="input-wrapper">
+                  <input type="date" id="task-date" required />
+                  <div class="input-border"></div>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="task-priority">Priority</label>
+                <div class="input-wrapper">
+                  <select id="task-priority">
+                    <option value="low">🟢 Low Priority</option>
+                    <option value="medium" selected>🟡 Medium Priority</option>
+                    <option value="high">🔴 High Priority</option>
+                  </select>
+                  <div class="input-border"></div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span class="btn-text">Add Task</span>
+              <div class="btn-glow"></div>
+              <div class="btn-particles"></div>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="tasks-section" data-scroll>
+        <div class="tasks-container">
+          <div class="tasks-header">
+            <h2 class="section-title">
+              <span class="title-gradient">Your Study Tasks</span>
+              <div class="title-underline"></div>
+            </h2>
+            <div class="filter-container">
+              <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                  All Tasks
+                </button>
+                <button class="filter-btn" data-filter="pending">
+                  Pending
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="tasks-list" class="tasks-list">
+            <div class="no-tasks">
+              <div class="no-tasks-icon">📝</div>
+              <p>No tasks yet! Add your first study task above.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+      </div>
+    </div>
+
+    <!-- Personal Info Section -->
+    <section class="personal-info-section">
+      <div class="personal-card">
+        <div class="personal-image">
+          <img src="img/jaya_sri_img.png" alt="Your Profile Picture" />
+        </div>
+        <div class="personal-content">
+          <h2>About Me</h2>
+          <h2 class="name">I AM JAYA SRI</h2>
+          <p>
+            I am a passionate web developer with expertise in creating modern
+            and responsive websites. My goal is to build user-friendly and
+            visually appealing web applications that solve real-world problems.
+          </p>
+          <div class="personal-info">
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>jayasri8004@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span>MERN stack developer</span>
+            </div>
+            <div class="info-item link-social">
+             
+              <a href="https://www.linkedin.com/in/jaya-sri-durga-aishwarya-b01254252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/jaya-sri-mattaparthi"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>&copy; 2025 Smart Study Planner. All Rights Reserved.</p>
+          <p>
+            Made with <i class="fa-solid fa-heart footer-heart"></i> by jaya sri mattaparthi
+          </p>
+        </div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/jaya-sri-mattaparthi"
+            aria-label="GitHub"
+            class="social-icon"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/jaya-sri-durga-aishwarya-b01254252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            aria-label="LinkedIn"
+            class="social-icon"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
